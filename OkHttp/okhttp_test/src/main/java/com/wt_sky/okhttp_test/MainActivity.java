@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.telecom.Call;
 import android.util.Log;
 
 import com.wt_sky.okHttp.network.CallBackHandler;
@@ -12,8 +11,6 @@ import com.wt_sky.okHttp.network.OkHttpHelper;
 import com.wt_sky.okHttp.network.base.BaseResponseValue;
 import com.wt_sky.okHttp.network.base.BaseTask;
 import com.wt_sky.okHttp.network.interfaces.CallBackMessage;
-
-import java.lang.ref.WeakReference;
 
 /**
  * Created by wentao on 15/10/16.
@@ -43,5 +40,5 @@ public class MainActivity extends AppCompatActivity {
             BaseResponseValue value = (BaseResponseValue) msg.obj;
             Log.i("CallBackHandler", value.toString());
         }
-    });
+    }, false);
 }

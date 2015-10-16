@@ -16,12 +16,13 @@ public final class CallBackHandler extends Handler {
 
     CallBackMessage obj;
 
-    public CallBackHandler(WeakReference<CallBackMessage> obj_weak) {
-        this.obj_weak = obj_weak;
+    public CallBackHandler(CallBackMessage obj) {
+        this(obj, true);
     }
 
-    public CallBackHandler(CallBackMessage obj) {
-        this.obj = obj;
+    public CallBackHandler(CallBackMessage obj, boolean isWeakRef) {
+        if (isWeakRef) obj_weak = new WeakReference<>(obj);
+        else this.obj = obj;
     }
 
     @Override
