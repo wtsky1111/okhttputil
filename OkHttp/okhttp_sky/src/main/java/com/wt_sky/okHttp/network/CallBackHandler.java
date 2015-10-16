@@ -12,15 +12,24 @@ import java.lang.ref.WeakReference;
  * Created by wentao on 15/10/14.
  */
 public final class CallBackHandler extends Handler {
-    WeakReference<CallBackMessage> obj;
+    WeakReference<CallBackMessage> obj_weak;
 
-    public CallBackHandler(WeakReference<CallBackMessage> obj) {
+    CallBackMessage obj;
+
+    public CallBackHandler(WeakReference<CallBackMessage> obj_weak) {
+        this.obj_weak = obj_weak;
+    }
+
+    public CallBackHandler(CallBackMessage obj) {
         this.obj = obj;
     }
 
     @Override
     public void handleMessage(Message msg) {
-        CallBackMessage callBackMessage = obj.get();
-        if (callBackMessage != null) callBackMessage.handlerMessage(msg);
+        if (obj != null) obj.handlerMessage(msg);
+        else {
+            CallBackMessage callBackMessage = obj_weak.get();
+            if (callBackMessage != null) callBackMessage.handlerMessage(msg);
+        }
     }
 }

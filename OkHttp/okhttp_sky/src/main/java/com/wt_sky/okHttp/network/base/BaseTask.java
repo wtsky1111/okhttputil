@@ -4,7 +4,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
@@ -49,9 +48,10 @@ public class BaseTask implements ITask {
         return task;
     }
 
-    public static BaseTask createTask(Map<String, String> map, int requestCode, String url, Handler handler) {
+    public static BaseTask createGetTask(Map<String, String> map, int requestCode, String url, Handler handler) {
         BaseTask task = new BaseTask();
         task.requestCode = requestCode;
+        task.requestMethod = RequestMethod.GET;
         task.map = map;
         task.handler = handler;
         task.url = url;
