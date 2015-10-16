@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OkHttp.iml" filepath="$PROJECT_DIR$/OkHttp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okhttp_sky/okhttp_sky.iml" filepath="$PROJECT_DIR$/okhttp_sky/okhttp_sky.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okhttp_test/okhttp_test.iml" filepath="$PROJECT_DIR$/okhttp_test/okhttp_test.iml" />
+    </modules>
+  </component>
+</project>
