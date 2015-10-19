@@ -60,6 +60,9 @@ public class BaseTask implements ITask {
 
     @Override
     public void execute() {
+        if (OkHttpHelper.isInitialize()) {
+            throw new IllegalStateException("OkHttpHelper must be  initialize");
+        }
         switch (requestMethod) {
             case GET:
                 OkHttpHelper.getInstance().doGet(url, map, callback);

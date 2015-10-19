@@ -34,8 +34,7 @@ public class Tool_sky {
      */
     public static boolean hasInternet(Context activity) {
 
-        ConnectivityManager manager = (ConnectivityManager) activity
-.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager manager = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (manager == null) {
             if (OkHttpHelper.IS_SHOW_TOAST)

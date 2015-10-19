@@ -54,8 +54,12 @@ public class OkHttpHelper {
 
     public void initialize(Context context, String user_agent) {
         mContext = context;
-//        mClient.setCookieHandler(new CookieManager(new PersistentCookieStore(context), CookiePolicy.ACCEPT_ALL));
+        mClient.setCookieHandler(new CookieManager(new PersistentCookieStore(context), CookiePolicy.ACCEPT_ALL));
         this.user_agent = user_agent;
+    }
+
+    public static boolean isInitialize() {
+        return instance == null;
     }
 
     public void setUser_agent(String user_agent) {
